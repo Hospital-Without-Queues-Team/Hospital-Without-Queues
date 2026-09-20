@@ -1,0 +1,1088 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  background: #f3f9fc;
+}
+
+/* =========================================================
+   MAIN PAGE
+========================================================= */
+
+.journey-result-page {
+  min-height: 100vh;
+  padding: 40px 6%;
+  color: #163d52;
+
+  background:
+    radial-gradient(circle at 10% 10%, rgba(42, 181, 207, 0.18), transparent 30%),
+    radial-gradient(circle at 90% 20%, rgba(55, 196, 172, 0.15), transparent 28%),
+    linear-gradient(135deg, #f5fbfd, #eef8fa 50%, #f8fcfd);
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.journey-result-header {
+  max-width: 1100px;
+  margin: 0 auto 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.result-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.result-brand-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+
+  background: linear-gradient(135deg, #119bd1, #2bc1ac);
+
+  box-shadow: 0 10px 25px rgba(25, 151, 201, 0.25);
+}
+
+.result-brand h1 {
+  margin: 0;
+
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+
+  color: #12394f;
+}
+
+.result-brand p {
+  margin: 3px 0 0;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+
+  color: #7896a5;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.journey-result-hero {
+  max-width: 1000px;
+  margin: auto;
+
+  text-align: center;
+}
+
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 9px 17px;
+
+  border-radius: 50px;
+
+  background: #e6faf5;
+  border: 1px solid #bfe9df;
+
+  color: #138c79;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+
+  box-shadow: 0 6px 18px rgba(30, 151, 130, 0.10);
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #20b99c;
+
+  box-shadow: 0 0 0 5px rgba(32, 185, 156, 0.12);
+
+  animation: pulse 1.7s infinite;
+}
+
+.journey-result-hero h2 {
+  margin: 20px 0 12px;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: clamp(34px, 5vw, 56px);
+  line-height: 1.08;
+
+  letter-spacing: -2px;
+
+  color: #12384f;
+}
+
+.journey-result-hero h2 span {
+  color: #159dc8;
+}
+
+.journey-result-hero > p {
+  max-width: 680px;
+  margin: auto;
+
+  color: #6f8998;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   STAT CARDS
+========================================================= */
+
+.journey-stats {
+  max-width: 1000px;
+
+  margin: 35px auto 45px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+.journey-stat-card {
+  position: relative;
+
+  padding: 24px;
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  border: 2px solid #d6e9f0;
+
+  box-shadow:
+    0 15px 35px rgba(31, 93, 117, 0.08),
+    0 3px 8px rgba(31, 93, 117, 0.04);
+
+  transition: 0.3s ease;
+
+  overflow: hidden;
+}
+
+.journey-stat-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 100px;
+  height: 100px;
+
+  right: -35px;
+  top: -35px;
+
+  border-radius: 50%;
+
+  background: rgba(30, 170, 202, 0.08);
+}
+
+.journey-stat-card:hover {
+  transform: translateY(-7px);
+
+  border-color: #9ed7e7;
+
+  box-shadow:
+    0 22px 45px rgba(31, 93, 117, 0.13);
+}
+
+.stat-icon {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+.stat-label {
+  display: block;
+
+  color: #7893a2;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.stat-value {
+  display: block;
+
+  margin-top: 6px;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 28px;
+  font-weight: 800;
+
+  color: #153e55;
+}
+
+.stat-description {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #849aa7;
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.journey-result-content {
+  max-width: 1000px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: 1.35fr 0.65fr;
+
+  gap: 24px;
+
+  align-items: start;
+}
+
+/* =========================================================
+   ROUTE CARD
+========================================================= */
+
+.live-route-card {
+  padding: 30px;
+
+  border-radius: 25px;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  border: 2px solid #d6e8ef;
+
+  box-shadow:
+    0 20px 55px rgba(32, 91, 116, 0.10);
+
+  transition: 0.3s ease;
+}
+
+.live-route-card:hover {
+  box-shadow:
+    0 25px 65px rgba(32, 91, 116, 0.14);
+}
+
+.route-title {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 22px;
+
+  border-bottom: 2px solid #edf3f6;
+}
+
+.route-title small {
+  display: block;
+
+  color: #849ba8;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+}
+
+.route-title h3 {
+  margin: 6px 0 0;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 23px;
+  font-weight: 800;
+
+  color: #153d54;
+}
+
+.route-live {
+  padding: 7px 12px;
+
+  border-radius: 30px;
+
+  color: #118d78;
+
+  background: #e8faf5;
+
+  border: 1px solid #c5ebe2;
+
+  font-size: 9px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.result-timeline {
+  position: relative;
+
+  margin-top: 28px;
+}
+
+.result-route-item {
+  position: relative;
+
+  display: flex;
+
+  gap: 17px;
+
+  min-height: 92px;
+}
+
+.result-route-icon {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+
+  background: #eef7fa;
+
+  border: 2px solid #d9eaf0;
+
+  font-size: 22px;
+
+  z-index: 2;
+}
+
+.result-route-item.completed .result-route-icon {
+  background: #e5faf4;
+
+  border-color: #c3ebe0;
+}
+
+.result-route-item.current .result-route-icon {
+  color: white;
+
+  background: linear-gradient(135deg, #129bd1, #28b9ac);
+
+  border-color: transparent;
+
+  box-shadow:
+    0 8px 20px rgba(21, 153, 201, 0.25);
+}
+
+.result-route-line {
+  position: absolute;
+
+  left: 23px;
+  top: 48px;
+
+  width: 2px;
+  height: 44px;
+
+  background: #d9e8ed;
+}
+
+.result-route-info {
+  flex: 1;
+
+  padding-top: 3px;
+}
+
+.result-route-info strong {
+  display: block;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  color: #173e55;
+}
+
+.result-route-info span {
+  display: block;
+
+  margin-top: 6px;
+
+  color: #8196a3;
+
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.route-time {
+  display: inline-block !important;
+
+  margin-top: 9px !important;
+
+  padding: 5px 10px;
+
+  border-radius: 30px;
+
+  background: #eef9fc;
+
+  color: #148db8 !important;
+
+  font-size: 10px !important;
+  font-weight: 800;
+}
+
+/* =========================================================
+   AI RECOMMENDATION
+========================================================= */
+
+.smart-recommendation {
+  margin-top: 15px;
+
+  padding: 22px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(135deg, #eafaff, #edfcf8);
+
+  border: 2px solid #c8e9ef;
+
+  box-shadow:
+    0 12px 30px rgba(30, 137, 165, 0.08);
+}
+
+.smart-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.smart-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background: white;
+
+  font-size: 20px;
+
+  box-shadow: 0 5px 15px rgba(29, 113, 137, 0.10);
+}
+
+.smart-top strong {
+  font-family: "Manrope", sans-serif;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  color: #174057;
+}
+
+.smart-recommendation p {
+  margin: 15px 0 0;
+
+  color: #607e8e;
+
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.smart-recommendation p strong {
+  color: #108ab7;
+}
+
+.save-time {
+  margin-top: 12px;
+
+  padding: 9px 12px;
+
+  display: inline-block;
+
+  border-radius: 10px;
+
+  background: rgba(255,255,255,0.75);
+
+  color: #118c78;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   WAITING CARD
+========================================================= */
+
+.waiting-card {
+  padding: 25px;
+
+  border-radius: 22px;
+
+  background: linear-gradient(145deg, #ffffff, #f8fcfd);
+
+  border: 2px solid #d8e9ef;
+
+  box-shadow:
+    0 16px 40px rgba(32, 91, 116, 0.08);
+}
+
+.waiting-badge {
+  display: inline-block;
+
+  padding: 7px 11px;
+
+  border-radius: 30px;
+
+  background: #fff5dc;
+
+  color: #a76d08;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+}
+
+.waiting-card h3 {
+  margin: 14px 0 8px;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 20px;
+  font-weight: 800;
+
+  color: #163d53;
+}
+
+.waiting-card > p {
+  margin: 0 0 20px;
+
+  color: #748d9b;
+
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.waiting-option {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 10px;
+
+  padding: 13px;
+
+  border-radius: 13px;
+
+  background: white;
+
+  border: 1px solid #dcebef;
+
+  transition: 0.25s ease;
+}
+
+.waiting-option:hover {
+  transform: translateX(5px);
+
+  border-color: #9ed5e5;
+
+  box-shadow: 0 7px 18px rgba(35, 108, 132, 0.08);
+}
+
+.waiting-option-icon {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #edf8fb;
+
+  font-size: 17px;
+}
+
+.waiting-option span {
+  color: #36586a;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   HOSPITAL STATUS
+========================================================= */
+
+.hospital-status {
+  margin-top: 20px;
+
+  padding: 20px;
+
+  border-radius: 20px;
+
+  background: #173f55;
+
+  color: white;
+
+  box-shadow:
+    0 16px 35px rgba(19, 61, 81, 0.18);
+}
+
+.hospital-status small {
+  color: #9cc0cf;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.hospital-status h3 {
+  margin: 7px 0;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 17px;
+}
+
+.hospital-status p {
+  margin: 0;
+
+  color: #c0d5dd;
+
+  font-size: 10px;
+}
+
+/* =========================================================
+   EXPLAINABLE AI
+========================================================= */
+
+.why-card {
+  max-width: 1000px;
+
+  margin: 25px auto 0;
+
+  padding: 28px;
+
+  border-radius: 23px;
+
+  background: white;
+
+  border: 2px solid #d8e9ef;
+
+  box-shadow:
+    0 15px 40px rgba(30, 87, 111, 0.08);
+}
+
+.why-label {
+  color: #1294bd;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.why-card h3 {
+  margin: 9px 0 9px;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 22px;
+
+  color: #173e55;
+}
+
+.why-card p {
+  max-width: 750px;
+
+  margin: 0;
+
+  color: #708a98;
+
+  font-size: 12px;
+
+  line-height: 1.8;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.result-actions {
+  max-width: 1000px;
+
+  margin: 25px auto 0;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.result-button {
+  padding: 13px 20px;
+
+  border-radius: 12px;
+
+  border: 2px solid #cfe2e9;
+
+  background: white;
+
+  color: #4d6c7b;
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.result-button:hover {
+  transform: translateY(-3px);
+
+  border-color: #8fcfe2;
+
+  color: #1189b5;
+
+  box-shadow: 0 9px 22px rgba(32, 112, 139, 0.10);
+}
+
+.result-button.primary {
+  color: white;
+
+  border: none;
+
+  background: linear-gradient(135deg, #1398ce, #29b9ac);
+
+  box-shadow:
+    0 10px 24px rgba(22, 148, 193, 0.22);
+}
+
+.result-button.primary:hover {
+  color: white;
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 15px 30px rgba(22, 148, 193, 0.28);
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.25);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.journey-result-page > * {
+  animation: slideUp 0.6s ease both;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .journey-result-content {
+    grid-template-columns: 1fr;
+  }
+
+  .journey-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .journey-result-page {
+    padding: 25px 4%;
+  }
+
+  .journey-result-header {
+    margin-bottom: 35px;
+  }
+
+  .result-brand h1 {
+    font-size: 17px;
+  }
+
+  .journey-result-hero h2 {
+    font-size: 34px;
+  }
+
+  .journey-result-hero > p {
+    font-size: 12px;
+  }
+
+  .live-route-card {
+    padding: 20px;
+  }
+
+  .route-title {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .route-title h3 {
+    font-size: 19px;
+  }
+
+  .result-actions {
+    flex-direction: column;
+  }
+
+  .result-button {
+    width: 100%;
+  }
+}
+/* =========================================================
+   CAREFLOW JOURNEY INTRODUCTION
+========================================================= */
+
+.smart-introduction {
+  width: min(900px, 100%);
+  margin: 0 auto 42px;
+  padding: 35px 30px;
+
+  text-align: center;
+
+  animation: smartIntro 0.8s ease forwards;
+}
+
+/* Badge */
+
+.smart-introduction .journey-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 18px;
+
+  border-radius: 50px;
+
+  background: linear-gradient(
+    135deg,
+    #e6faf6,
+    #eaf8ff
+  );
+
+  border: 2px solid #bfe6e8;
+
+  color: #087f78;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+
+  box-shadow:
+    0 8px 20px rgba(24, 145, 160, 0.10);
+
+  transition: all 0.3s ease;
+}
+
+.smart-introduction .journey-badge:hover {
+  transform: translateY(-3px) scale(1.03);
+
+  box-shadow:
+    0 12px 25px rgba(24, 145, 160, 0.16);
+}
+
+/* Main heading */
+
+.smart-introduction h2 {
+  margin: 24px auto 15px;
+
+  max-width: 850px;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: clamp(38px, 5vw, 58px);
+
+  line-height: 1.12;
+
+  letter-spacing: -2px;
+
+  font-weight: 800;
+
+  color: #123c54;
+
+  text-shadow:
+    0 3px 12px rgba(25, 72, 91, 0.08);
+}
+
+/* Highlighted words */
+
+.smart-introduction h2 span {
+  position: relative;
+
+  display: inline-block;
+
+  margin-left: 8px;
+
+  color: #119bc7;
+
+  z-index: 1;
+}
+
+/* Highlight underneath "now in motion." */
+
+.smart-introduction h2 span::after {
+  content: "";
+
+  position: absolute;
+
+  left: 2px;
+  right: 2px;
+
+  bottom: -5px;
+
+  height: 7px;
+
+  border-radius: 20px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(18, 155, 199, 0.25),
+    rgba(39, 190, 173, 0.20)
+  );
+
+  z-index: -1;
+}
+
+/* Description */
+
+.smart-introduction p {
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  color: #668493;
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  font-weight: 500;
+}
+
+/* =========================================================
+   INTRO ANIMATION
+========================================================= */
+
+@keyframes smartIntro {
+
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .smart-introduction {
+    padding: 25px 15px;
+    margin-bottom: 30px;
+  }
+
+  .smart-introduction h2 {
+    font-size: 34px;
+    letter-spacing: -1px;
+  }
+
+  .smart-introduction h2 span {
+    margin-left: 4px;
+  }
+
+  .smart-introduction p {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .smart-introduction .journey-badge {
+    font-size: 9px;
+    padding: 8px 13px;
+  }
+
+}

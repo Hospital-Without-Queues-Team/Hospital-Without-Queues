@@ -1,0 +1,2043 @@
+/* =========================================================
+   HOSPITAL WITHOUT QUEUES
+   FUTURISTIC AI HOSPITAL HOME
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #06131d;
+  font-family: "DM Sans", sans-serif;
+  color: #eafcff;
+}
+
+button {
+  font-family: inherit;
+}
+
+.home-page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(0, 180, 200, 0.18),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 25%,
+      rgba(0, 100, 180, 0.18),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #041019 0%,
+      #071b2a 45%,
+      #062431 100%
+    );
+}
+
+
+/* =========================================================
+   ANIMATED GRID
+========================================================= */
+
+.background-grid {
+  position: fixed;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(71, 214, 229, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(71, 214, 229, 0.045) 1px,
+      transparent 1px
+    );
+
+  background-size: 55px 55px;
+
+  pointer-events: none;
+
+  mask-image: linear-gradient(
+    to bottom,
+    black,
+    transparent 90%
+  );
+
+  animation: gridMove 18s linear infinite;
+}
+
+@keyframes gridMove {
+
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(55px);
+  }
+
+}
+
+
+/* =========================================================
+   GLOW ORBS
+========================================================= */
+
+.glow-orb {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(80px);
+  opacity: 0.3;
+  animation: orbFloat 8s ease-in-out infinite alternate;
+}
+
+.glow-orb-one {
+  width: 320px;
+  height: 320px;
+  background: #00c6d7;
+  top: 15%;
+  left: -100px;
+}
+
+.glow-orb-two {
+  width: 300px;
+  height: 300px;
+  background: #006eff;
+  right: -100px;
+  top: 35%;
+  animation-delay: 2s;
+}
+
+.glow-orb-three {
+  width: 240px;
+  height: 240px;
+  background: #00a6b7;
+  left: 45%;
+  bottom: -120px;
+  animation-delay: 4s;
+}
+
+@keyframes orbFloat {
+
+  from {
+    transform: translateY(-20px) scale(1);
+  }
+
+  to {
+    transform: translateY(30px) scale(1.1);
+  }
+
+}
+
+
+/* =========================================================
+   FLOATING SYMBOLS
+========================================================= */
+
+.floating-symbol {
+  position: fixed;
+
+  color: rgba(91, 226, 237, 0.16);
+
+  font-size: 28px;
+
+  pointer-events: none;
+
+  animation: floatingSymbol 6s ease-in-out infinite;
+}
+
+.symbol-one {
+  top: 25%;
+  left: 5%;
+}
+
+.symbol-two {
+  top: 18%;
+  right: 10%;
+  animation-delay: 1s;
+}
+
+.symbol-three {
+  top: 65%;
+  left: 7%;
+  animation-delay: 2s;
+}
+
+.symbol-four {
+  top: 70%;
+  right: 8%;
+  animation-delay: 3s;
+}
+
+.symbol-five {
+  top: 42%;
+  right: 4%;
+  animation-delay: 4s;
+}
+
+@keyframes floatingSymbol {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(8deg);
+  }
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.home-header {
+
+  position: relative;
+  z-index: 10;
+
+  height: 90px;
+
+  padding: 0 6%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid rgba(104, 225, 238, 0.12);
+
+  background: rgba(3, 17, 27, 0.72);
+
+  backdrop-filter: blur(20px);
+
+  animation: headerDrop 0.8s ease both;
+}
+
+@keyframes headerDrop {
+
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* BRAND */
+
+.home-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.home-logo {
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+
+  font-size: 26px;
+  font-weight: 900;
+
+  background:
+    linear-gradient(
+      135deg,
+      #04b9c7,
+      #006a91
+    );
+
+  box-shadow:
+    0 0 25px rgba(0, 201, 220, 0.35);
+
+  animation: logoPulse 3s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+
+  0%,
+  100% {
+    box-shadow:
+      0 0 20px rgba(0, 201, 220, 0.25);
+  }
+
+  50% {
+    box-shadow:
+      0 0 35px rgba(0, 201, 220, 0.55);
+  }
+
+}
+
+.brand-text h2 {
+
+  margin: 0;
+
+  color: white;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 20px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+}
+
+.brand-text span {
+
+  display: block;
+
+  margin-top: 3px;
+
+  color: #79a9b8;
+
+  font-size: 12px;
+
+  letter-spacing: 1px;
+}
+
+
+/* HEADER AI */
+
+.header-ai-status {
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  color: #7be8ef;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.header-status-dot {
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #29e0c3;
+
+  box-shadow:
+    0 0 0 5px rgba(41, 224, 195, 0.08),
+    0 0 15px #29e0c3;
+
+  animation: statusPulse 1.8s infinite;
+}
+
+@keyframes statusPulse {
+
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.35);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
+}
+
+
+/* USER */
+
+.home-user {
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-avatar {
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(15, 177, 192, 0.15);
+
+  border: 1px solid rgba(71, 224, 235, 0.3);
+
+  color: #80edf4;
+
+  font-weight: 800;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-info strong {
+  color: white;
+  font-size: 13px;
+}
+
+.user-info span {
+  color: #7193a0;
+  font-size: 11px;
+}
+
+.logout-button {
+
+  padding: 10px 18px;
+
+  border-radius: 10px;
+
+  border: 1px solid rgba(117, 213, 224, 0.25);
+
+  background: rgba(255, 255, 255, 0.04);
+
+  color: #d7faff;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.logout-button:hover {
+
+  background: rgba(0, 185, 203, 0.12);
+
+  border-color: #36d6df;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.home-content {
+
+  position: relative;
+  z-index: 2;
+
+  width: min(1400px, 90%);
+
+  margin: auto;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-section {
+
+  min-height: 620px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.5fr)
+    minmax(280px, 0.5fr);
+
+  gap: 50px;
+
+  align-items: center;
+
+  padding: 80px 0 60px;
+
+  animation: heroAppear 1s ease both;
+}
+
+@keyframes heroAppear {
+
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* TAG */
+
+.hero-tag {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 9px 14px;
+
+  border-radius: 30px;
+
+  color: #73e6ef;
+
+  background: rgba(26, 201, 216, 0.08);
+
+  border: 1px solid rgba(67, 216, 228, 0.2);
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+}
+
+.tag-pulse {
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #39e4c2;
+
+  box-shadow: 0 0 12px #39e4c2;
+
+  animation: statusPulse 1.5s infinite;
+}
+
+
+/* HERO TITLE */
+
+.hero-left h1 {
+
+  margin: 25px 0 15px;
+
+  max-width: 850px;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: clamp(55px, 7vw, 95px);
+
+  line-height: 0.98;
+
+  letter-spacing: -5px;
+
+  font-weight: 800;
+
+  color: #f1fdff;
+
+  animation: titleReveal 1s ease 0.2s both;
+}
+
+@keyframes titleReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+.hero-highlight {
+
+  background:
+    linear-gradient(
+      90deg,
+      #22d8df,
+      #6af3e7,
+      #27aee9
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+
+  background-size: 200% auto;
+
+  animation: gradientMove 4s linear infinite;
+}
+
+@keyframes gradientMove {
+
+  0% {
+    background-position: 0% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+
+}
+
+
+/* UNDERLINE */
+
+.hero-line {
+
+  width: 210px;
+  height: 5px;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #28dbe1,
+      transparent
+    );
+
+  margin: 25px 0;
+}
+
+
+/* DESCRIPTION */
+
+.hero-description {
+
+  max-width: 760px;
+
+  margin: 0;
+
+  color: #9dbdc8;
+
+  font-size: 19px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.hero-actions {
+
+  display: flex;
+
+  gap: 15px;
+
+  margin-top: 32px;
+}
+
+.primary-journey-button {
+
+  min-width: 290px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 8px 18px 8px 8px;
+
+  border: none;
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #08aeba,
+      #087b99
+    );
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 12px 35px rgba(0, 187, 205, 0.25);
+
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.primary-journey-button:hover {
+
+  transform: translateY(-5px) scale(1.02);
+
+  box-shadow:
+    0 18px 45px rgba(0, 211, 225, 0.4);
+}
+
+.button-circle {
+
+  width: 43px;
+  height: 43px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: rgba(255,255,255,0.16);
+
+  font-size: 22px;
+}
+
+.button-end-arrow {
+
+  margin-left: auto;
+
+  font-size: 20px;
+}
+
+
+.secondary-how-button {
+
+  padding: 0 24px;
+
+  border-radius: 15px;
+
+  border: 1px solid rgba(121, 213, 224, 0.28);
+
+  background: rgba(255,255,255,0.04);
+
+  color: #c9e9ee;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.secondary-how-button:hover {
+
+  background: rgba(57, 213, 224, 0.1);
+
+  border-color: #39dce5;
+
+  transform: translateY(-4px);
+}
+
+.play-icon {
+  margin-right: 8px;
+}
+
+
+/* BENEFITS */
+
+.hero-benefits {
+
+  display: flex;
+
+  gap: 28px;
+
+  margin-top: 24px;
+
+  flex-wrap: wrap;
+}
+
+.hero-benefits div {
+
+  color: #759ba7;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+.hero-benefits span {
+
+  color: #36dfc1;
+
+  margin-right: 7px;
+
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   STATUS CARD
+========================================================= */
+
+.hero-status-card {
+
+  padding: 30px;
+
+  border-radius: 25px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 55, 71, 0.85),
+      rgba(5, 25, 38, 0.9)
+    );
+
+  border: 1px solid rgba(93, 218, 228, 0.2);
+
+  box-shadow:
+    0 30px 70px rgba(0,0,0,0.25),
+    inset 0 1px rgba(255,255,255,0.05);
+
+  animation: floatingCard 5s ease-in-out infinite;
+}
+
+@keyframes floatingCard {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+}
+
+.status-card-top {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  color: #81aab6;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.live-indicator {
+  color: #36e1c1;
+}
+
+.status-number {
+
+  margin-top: 30px;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 70px;
+
+  line-height: 1;
+
+  font-weight: 800;
+
+  color: #7ff1ef;
+
+  text-shadow:
+    0 0 30px rgba(80, 231, 230, 0.25);
+}
+
+.hero-status-card p {
+
+  color: #bdd9df;
+
+  font-size: 15px;
+}
+
+.status-progress {
+
+  height: 6px;
+
+  margin: 25px 0 10px;
+
+  border-radius: 10px;
+
+  background: rgba(255,255,255,0.08);
+
+  overflow: hidden;
+}
+
+.status-progress span {
+
+  display: block;
+
+  width: 78%;
+
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #24d6db,
+      #48e8b7
+    );
+
+  animation: progressLoad 2s ease;
+}
+
+@keyframes progressLoad {
+
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 78%;
+  }
+
+}
+
+.hero-status-card small {
+
+  color: #6c919d;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   JOURNEY SECTION
+========================================================= */
+
+.journey-section {
+
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 0.8fr 1.5fr;
+
+  gap: 45px;
+
+  padding: 65px;
+
+  border-radius: 35px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #082f40,
+      #075e70 50%,
+      #063b51
+    );
+
+  border: 1px solid rgba(89, 232, 236, 0.25);
+
+  box-shadow:
+    0 35px 100px rgba(0,0,0,0.3);
+}
+
+
+/* decorative glow */
+
+.journey-section::before {
+
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  right: -150px;
+  top: -200px;
+
+  border: 1px solid rgba(117, 238, 240, 0.15);
+
+  box-shadow:
+    0 0 0 70px rgba(117,238,240,0.025),
+    0 0 0 140px rgba(117,238,240,0.02);
+
+}
+
+
+/* JOURNEY CONTENT */
+
+.journey-content {
+
+  position: relative;
+
+  z-index: 3;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.journey-label {
+
+  color: #82f0eb;
+
+  font-size: 11px;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+.journey-content h2 {
+
+  margin: 20px 0;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 52px;
+
+  line-height: 1;
+
+  letter-spacing: -2px;
+
+  color: white;
+}
+
+.journey-content h2 span {
+
+  color: #6dece5;
+}
+
+.journey-content p {
+
+  color: #a7d4dc;
+
+  font-size: 16px;
+
+  line-height: 1.75;
+
+  max-width: 450px;
+}
+
+
+/* MINI STATS */
+
+.journey-mini-stats {
+
+  display: flex;
+
+  gap: 10px;
+
+  margin: 20px 0 25px;
+}
+
+.journey-mini-stats div {
+
+  min-width: 75px;
+
+  padding: 12px;
+
+  border-radius: 12px;
+
+  background: rgba(255,255,255,0.06);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+.journey-mini-stats strong {
+
+  color: #71eee7;
+
+  font-size: 14px;
+}
+
+.journey-mini-stats span {
+
+  color: #8bb5bd;
+
+  font-size: 10px;
+
+  margin-top: 3px;
+}
+
+
+/* MAIN BUTTON */
+
+.journey-main-button {
+
+  width: 230px;
+
+  padding: 16px 20px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  border: none;
+
+  border-radius: 13px;
+
+  background: white;
+
+  color: #07586a;
+
+  font-size: 14px;
+
+  font-weight: 900;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.18);
+}
+
+.journey-main-button:hover {
+
+  transform: translateX(7px);
+
+  box-shadow:
+    0 15px 35px rgba(0,0,0,0.25);
+}
+
+.journey-main-button strong {
+
+  font-size: 20px;
+}
+
+.journey-note {
+
+  margin-top: 15px;
+
+  color: #8cc5cd;
+
+  font-size: 11px;
+}
+
+.journey-note span {
+
+  color: #5de7d9;
+
+  margin-right: 7px;
+}
+
+
+/* =========================================================
+   HOSPITAL MAP
+========================================================= */
+
+.hospital-map-container {
+
+  position: relative;
+
+  z-index: 3;
+
+  min-height: 500px;
+
+  border-radius: 25px;
+
+  background:
+    rgba(2, 21, 31, 0.6);
+
+  border: 1px solid rgba(109, 225, 230, 0.18);
+
+  overflow: hidden;
+
+  box-shadow:
+    inset 0 0 60px rgba(0, 203, 220, 0.05);
+}
+
+
+/* TOP BAR */
+
+.map-top-bar {
+
+  height: 52px;
+
+  padding: 0 18px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  border-bottom: 1px solid rgba(100,220,230,0.12);
+
+  color: #7daab4;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.map-top-bar > div {
+
+  display: flex;
+
+  gap: 8px;
+
+  align-items: center;
+
+  color: #82e8e8;
+}
+
+.map-live-dot {
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #2ce4bf;
+
+  box-shadow: 0 0 12px #2ce4bf;
+
+  animation: statusPulse 1.5s infinite;
+}
+
+
+/* MAP */
+
+.hospital-map {
+
+  position: relative;
+
+  height: 445px;
+
+  background-image:
+    linear-gradient(
+      rgba(82, 221, 230, 0.04) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(82, 221, 230, 0.04) 1px,
+      transparent 1px
+    );
+
+  background-size: 35px 35px;
+}
+
+
+/* ORBITS */
+
+.map-orbit {
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  border: 1px dashed rgba(92, 231, 235, 0.15);
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  animation: orbitRotate 20s linear infinite;
+}
+
+.map-orbit-one {
+
+  width: 280px;
+  height: 280px;
+}
+
+.map-orbit-two {
+
+  width: 390px;
+  height: 390px;
+
+  animation-direction: reverse;
+
+  animation-duration: 28s;
+}
+
+.map-orbit-three {
+
+  width: 500px;
+  height: 500px;
+
+  animation-duration: 35s;
+}
+
+@keyframes orbitRotate {
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(360deg);
+  }
+
+}
+
+
+/* =========================================================
+   MAP NODES
+========================================================= */
+
+.map-node {
+
+  position: absolute;
+
+  width: 125px;
+
+  padding: 12px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+
+  border-radius: 16px;
+
+  background:
+    rgba(7, 36, 49, 0.92);
+
+  border: 1px solid rgba(94, 224, 231, 0.25);
+
+  box-shadow:
+    0 15px 30px rgba(0,0,0,0.25);
+
+  backdrop-filter: blur(10px);
+
+  transition: 0.3s;
+
+  animation: nodeFloat 4s ease-in-out infinite;
+}
+
+.map-node:hover {
+
+  transform: translateY(-8px) scale(1.05);
+
+  border-color: #54e7e9;
+
+  box-shadow:
+    0 0 30px rgba(53, 221, 228, 0.2);
+}
+
+@keyframes nodeFloat {
+
+  0%,
+  100% {
+    margin-top: 0;
+  }
+
+  50% {
+    margin-top: -7px;
+  }
+
+}
+
+.node-icon {
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background:
+    rgba(37, 210, 220, 0.1);
+
+  font-size: 19px;
+
+  margin-bottom: 7px;
+}
+
+.map-node strong {
+
+  color: #dffcff;
+
+  font-size: 11px;
+}
+
+.map-node small {
+
+  margin-top: 3px;
+
+  color: #6f9da8;
+
+  font-size: 9px;
+}
+
+
+/* POSITIONS */
+
+.map-you {
+  left: 7%;
+  top: 42%;
+}
+
+.map-registration {
+  left: 30%;
+  top: 18%;
+}
+
+.map-test {
+  left: 48%;
+  top: 48%;
+}
+
+.map-doctor {
+  right: 27%;
+  top: 16%;
+}
+
+.map-pharmacy {
+  right: 8%;
+  top: 45%;
+}
+
+.map-done {
+  right: 27%;
+  bottom: 8%;
+}
+
+
+/* =========================================================
+   MAP CONNECTIONS
+========================================================= */
+
+.map-line {
+
+  position: absolute;
+
+  height: 2px;
+
+  transform-origin: left center;
+
+  background:
+    linear-gradient(
+      90deg,
+      #3be3df,
+      rgba(59,227,223,0.05)
+    );
+
+  box-shadow:
+    0 0 10px rgba(45,220,222,0.4);
+
+  animation: routeFlow 2s linear infinite;
+}
+
+@keyframes routeFlow {
+
+  from {
+    background-position: 0;
+  }
+
+  to {
+    background-position: 100px;
+  }
+
+}
+
+.map-line-one {
+
+  width: 190px;
+
+  left: 17%;
+  top: 48%;
+
+  transform: rotate(-32deg);
+}
+
+.map-line-two {
+
+  width: 160px;
+
+  left: 39%;
+  top: 39%;
+
+  transform: rotate(30deg);
+}
+
+.map-line-three {
+
+  width: 160px;
+
+  left: 58%;
+  top: 43%;
+
+  transform: rotate(-20deg);
+}
+
+.map-line-four {
+
+  width: 160px;
+
+  left: 60%;
+  top: 63%;
+
+  transform: rotate(30deg);
+}
+
+
+/* =========================================================
+   AI BADGE
+========================================================= */
+
+.map-ai-badge {
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 15px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 10px 16px;
+
+  border-radius: 12px;
+
+  background:
+    rgba(15, 76, 87, 0.9);
+
+  border: 1px solid rgba(85, 228, 227, 0.25);
+
+  box-shadow:
+    0 0 30px rgba(43,210,217,0.12);
+
+  animation: badgeGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes badgeGlow {
+
+  0%,
+  100% {
+    box-shadow:
+      0 0 15px rgba(43,210,217,0.08);
+  }
+
+  50% {
+    box-shadow:
+      0 0 30px rgba(43,210,217,0.25);
+  }
+
+}
+
+.ai-badge-icon {
+
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  color: #062b38;
+
+  background: #70eee6;
+}
+
+.map-ai-badge strong {
+
+  display: block;
+
+  color: #74e9e6;
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+}
+
+.map-ai-badge small {
+
+  display: block;
+
+  margin-top: 2px;
+
+  color: #86aeb7;
+
+  font-size: 9px;
+}
+
+
+/* SCAN */
+
+.map-scan-line {
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(79, 239, 235, 0.6),
+      transparent
+    );
+
+  box-shadow:
+    0 0 15px rgba(79,239,235,0.4);
+
+  animation: mapScan 4s linear infinite;
+}
+
+@keyframes mapScan {
+
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features-section {
+
+  padding: 120px 0;
+
+}
+
+
+/* HEADING */
+
+.section-heading {
+
+  margin-bottom: 45px;
+}
+
+.section-eyebrow {
+
+  color: #42dce1;
+
+  font-size: 11px;
+
+  font-weight: 900;
+
+  letter-spacing: 2.5px;
+
+  margin-bottom: 14px;
+}
+
+.section-heading h2 {
+
+  margin: 0;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: clamp(40px, 5vw, 65px);
+
+  letter-spacing: -3px;
+
+  color: #effcff;
+}
+
+.section-heading p {
+
+  color: #789da9;
+
+  font-size: 16px;
+}
+
+.section-heading strong {
+
+  color: #b5e9ed;
+}
+
+
+/* GRID */
+
+.feature-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 18px;
+}
+
+
+/* CARD */
+
+.feature-card {
+
+  position: relative;
+
+  padding: 28px;
+
+  min-height: 290px;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(16, 49, 63, 0.9),
+      rgba(5, 24, 36, 0.9)
+    );
+
+  border: 1px solid rgba(102, 221, 229, 0.13);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s,
+    border-color 0.35s,
+    box-shadow 0.35s;
+}
+
+.feature-card::before {
+
+  content: "";
+
+  position: absolute;
+
+  width: 160px;
+  height: 160px;
+
+  right: -70px;
+  top: -70px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(44,220,226,0.16),
+      transparent 70%
+    );
+
+  transition: 0.4s;
+}
+
+.feature-card:hover {
+
+  transform: translateY(-12px);
+
+  border-color: rgba(69, 224, 231, 0.4);
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.25),
+    0 0 35px rgba(0, 193, 205, 0.08);
+}
+
+.feature-card:hover::before {
+
+  transform: scale(1.7);
+}
+
+
+/* NUMBER */
+
+.feature-number {
+
+  position: absolute;
+
+  right: 22px;
+  top: 18px;
+
+  color: rgba(115, 224, 229, 0.25);
+
+  font-family: "Manrope", sans-serif;
+
+  font-weight: 800;
+
+  font-size: 12px;
+}
+
+
+/* ICON */
+
+.feature-icon {
+
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+
+  background:
+    rgba(54, 211, 219, 0.1);
+
+  border: 1px solid rgba(81, 218, 224, 0.12);
+
+  font-size: 25px;
+
+  margin-bottom: 30px;
+
+  transition: 0.3s;
+}
+
+.feature-card:hover .feature-icon {
+
+  transform: rotate(-6deg) scale(1.1);
+
+  background:
+    rgba(54, 211, 219, 0.17);
+
+  box-shadow:
+    0 0 25px rgba(54,211,219,0.12);
+}
+
+.feature-card h3 {
+
+  margin: 0 0 10px;
+
+  font-family: "Manrope", sans-serif;
+
+  color: #e8fcff;
+
+  font-size: 20px;
+}
+
+.feature-card p {
+
+  color: #759ba6;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+.feature-card > span {
+
+  display: inline-block;
+
+  margin-top: 12px;
+
+  color: #50dfe3;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  transition: 0.3s;
+}
+
+.feature-card:hover > span {
+
+  transform: translateX(5px);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .header-ai-status {
+    display: none;
+  }
+
+  .hero-section {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .hero-status-card {
+
+    max-width: 420px;
+  }
+
+  .journey-section {
+
+    grid-template-columns: 1fr;
+
+    padding: 40px;
+  }
+
+  .feature-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .home-header {
+
+    height: auto;
+
+    padding: 15px 5%;
+
+  }
+
+  .brand-text h2 {
+    font-size: 15px;
+  }
+
+  .brand-text span {
+    font-size: 9px;
+  }
+
+  .user-info {
+    display: none;
+  }
+
+  .logout-button {
+    padding: 8px 12px;
+  }
+
+  .home-content {
+    width: 92%;
+  }
+
+  .hero-section {
+
+    padding-top: 55px;
+
+    min-height: auto;
+  }
+
+  .hero-left h1 {
+
+    font-size: 52px;
+
+    letter-spacing: -3px;
+  }
+
+  .hero-description {
+
+    font-size: 16px;
+  }
+
+  .hero-actions {
+
+    flex-direction: column;
+  }
+
+  .primary-journey-button {
+
+    width: 100%;
+  }
+
+  .secondary-how-button {
+
+    min-height: 55px;
+  }
+
+  .hero-benefits {
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .journey-section {
+
+    padding: 25px;
+
+    border-radius: 25px;
+  }
+
+  .journey-content h2 {
+
+    font-size: 40px;
+  }
+
+  .hospital-map-container {
+
+    min-height: 450px;
+  }
+
+  .hospital-map {
+
+    transform: scale(0.8);
+
+    transform-origin: top left;
+
+    width: 125%;
+  }
+
+  .feature-grid {
+
+    grid-template-columns: 1fr;
+  }
+
+  .features-section {
+
+    padding: 80px 0;
+  }
+
+}
